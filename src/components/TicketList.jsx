@@ -17,18 +17,18 @@ var masterTicketList = [
     location: '9F',
     issue: 'Donkey picture not displaying on hover in Zoology app. :('
   }
-];
+]
 
 function TicketList() {
   return(
     <div>
-    <hr/>
-    {masterTicketList.map((ticket, index) =>
-      <Ticket names={ticket.names}
-      location={ticket.location}
-      issue={ticket.issue}
-      key={index}/>
-    )}
+      <hr/>
+      {masterTicketList.map((ticket, index) =>
+        <Ticket names={ticket.names}
+          location={ticket.location}
+          issue={ticket.issue}
+          key={index}/>
+      )}
     </div>
   )
 }

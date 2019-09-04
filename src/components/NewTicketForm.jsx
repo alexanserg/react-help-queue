@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 function NewTicketForm(){
   return (
@@ -18,7 +18,7 @@ function NewTicketForm(){
         <button type='submit'>Help!</button>
       </form>
     </div>
-  );
+  )
 }
 
-export default NewTicketForm;
+export default NewTicketForm

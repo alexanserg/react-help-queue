@@ -26,7 +26,7 @@ function MyStyledComponent() {
       <p>Pretty cool, right</p>
 
       <p className="red-text">only this paragraph will get the style :)</p>
-      <style jsx>{`.red-text {color: red;}`}</style>
+      <style jsx>{'.red-text {color: red;}'}</style>
 
     </div>
   )
