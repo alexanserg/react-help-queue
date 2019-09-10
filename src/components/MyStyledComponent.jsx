@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function MyStyledComponent() {
 
@@ -6,16 +6,16 @@ function MyStyledComponent() {
     backgroundColor: 'yellow',
     fontFamily: 'sans-serif',
     paddingTop: '5px'
-  }
+  };
   var myStyledh1 = {
     textAlign: 'center',
     fontFamily: 'cursive'
-  }
+  };
   var myStyledh2 = {
     textAlign: 'center',
     fontFamily: 'cursive',
     color: 'Red'
-  }
+  };
 
   return (
     <div>
@@ -29,7 +29,7 @@ function MyStyledComponent() {
       <style jsx>{'.red-text {color: red;}'}</style>
 
     </div>
-  )
+  );
 }
 
-export default MyStyledComponent
+export default MyStyledComponent;
