@@ -17,7 +17,7 @@ function TicketList(props) {
         currentRouterPath={props.currentRouterPath}
         formattedWaitTime={ticket.formattedWaitTime}
         onTicketSelection={props.onTicketSelection} />
-      )}
+      })}
     </div>
   );
 }
