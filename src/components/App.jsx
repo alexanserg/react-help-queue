@@ -7,6 +7,7 @@ import NewTicketControl from './NewTicketControl';
 import Error404 from './Error404';
 import Moment from 'moment';
 import Admin from './Admin';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
 
@@ -57,7 +58,8 @@ class App extends React.Component {
       <div>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList}
+          <Route exact path='/' render={(props)=><TicketList ticketList={this.state.masterTicketList}
+          currentRouterPath={props.location.pathname}
           />} />
           <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} /> } />
           <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList}    currentRouterPath={props.location.pathname}/>} />
