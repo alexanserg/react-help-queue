@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import NewTicketControl from './NewTicketControl';
 import Error404 from './Error404';
 import Moment from 'moment';
+import Admin from './Admin';
 
 class App extends React.Component {
 
@@ -18,15 +19,23 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log('componentDidMount');
     this.waitTimeUpdateTimer = setInterval(() =>
-    this.updateTicketElapsedWaitTime(),
-    10000
+      this.updateTicketElapsedWaitTime(),
+    60000
     );
   }
 
   componentWillUnmount() {
+    console.log('componentWillUnmount');
     clearInterval(this.waitTimeUpdateTimer);
   }
+
+
+
+
+
+
 
   updateTicketElapsedWaitTime() {
     let newMasterTicketList = this.state.masterTicketList.slice();
@@ -38,7 +47,7 @@ class App extends React.Component {
 
   handleAddingNewTicketToList(newTicket){
     var newMasterTicketList = this.state.masterTicketList.slice();
-    newTicket.formattedWaitTime = (newTicket.timeOpen).fromNow(true)
+    newTicket.formattedWaitTime = (newTicket.timeOpen).fromNow(true);
     newMasterTicketList.push(newTicket);
     this.setState({masterTicketList: newMasterTicketList});
   }
@@ -48,8 +57,10 @@ class App extends React.Component {
       <div>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
+          <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList}
+          />} />
           <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} /> } />
+          <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList}    currentRouterPath={props.location.pathname}/>} />
           <Route component={Error404} />
         </Switch>
       </div>
