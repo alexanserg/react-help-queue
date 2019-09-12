@@ -13,9 +13,10 @@ function TicketList(props) {
         return <Ticket names={ticket.names}
         location={ticket.location}
         issue={ticket.issue}
-        ticketId={ticket.id}
-        currentRouterPath={props.currentRouterPath}
         formattedWaitTime={ticket.formattedWaitTime}
+        currentRouterPath={props.currentRouterPath}
+        key={ticketId}
+        ticketId={ticketId}
         onTicketSelection={props.onTicketSelection} />
       })}
     </div>

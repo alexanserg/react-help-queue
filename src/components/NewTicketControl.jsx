@@ -7,7 +7,7 @@ class NewTicketControl extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       formVisibleOnPage: false
     };
     this.handleTroubleShootingConfirmation = this.handleTroubleShootingConfirmation.bind(this);
@@ -15,7 +15,6 @@ class NewTicketControl extends React.Component {
 
   handleTroubleShootingConfirmation(){
     this.setState({formVisibleOnPage: true});
-
     document.body.style.backgroundColor = '#FFC926';
 
   }
@@ -30,13 +29,12 @@ class NewTicketControl extends React.Component {
     return (
       <div>
         {currentlyVisibleContent}
-        <strong onClick={this.handleClick}>Click on me to change my state!</strong>
       </div>
     );
   }
 }
 
-NewTicketControl.PropTypes = {
+NewTicketControl.propTypes = {
   onNewTicketCreation: PropTypes.func
 };
 

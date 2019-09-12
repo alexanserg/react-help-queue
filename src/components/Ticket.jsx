@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'moment';
 
 function Ticket(props) {
   const ticketInformation =
@@ -26,18 +25,14 @@ function Ticket(props) {
 }
 
 
-function displayTimeOpen(timeOpen) {
-  return timeOpen.from(new Moment(), true);
-}
-
 Ticket.propTypes = {
   names: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  issue: PropTypes.string.isRequired,
-  ticketId: PropTypes.string.isRequired,
+  issue: PropTypes.string,
   formattedWaitTime: PropTypes.string.isRequired,
   currentRouterPath: PropTypes.string,
-  onTicketSelection: PropTypes.func
+  onTicketSelection: PropTypes.func,
+  ticketId: PropTypes.string.isRequired
 };
 
 export default Ticket;

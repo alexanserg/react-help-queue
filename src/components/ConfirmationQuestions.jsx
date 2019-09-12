@@ -11,7 +11,7 @@ function ConfirmationQuestions(props){
 }
 
 ConfirmationQuestions.PropTypes = {
-  onTroubleShootingConfirmation: PropTypes.func.isRequired
+  onTroubleShootingConfirmation: PropTypes.func
 };
 
 export default ConfirmationQuestions;

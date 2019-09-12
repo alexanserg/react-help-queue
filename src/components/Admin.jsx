@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Ticket from './ticket'
 import TicketList from './TicketList';
 import TicketDetail from './TicketDetail'
 
@@ -14,15 +13,15 @@ function Admin(props){
       {optionalSelectedTicketContent}
       <TicketList
         ticketList = {props.ticketList}
-        onTicketSelection={props.onTicketSelection}
-        currentRouterPath={props.currentRouterPath} />
+        currentRouterPath={props.currentRouterPath}
+        onTicketSelection={props.onTicketSelection} />
     </div>
   );
 }
 
 Admin.propTypes = {
-  ticketList: PropTypes.array,
-  currentRouterPath: PropTypes.string,
+  ticketList: PropTypes.object,
+  currentRouterPath: PropTypes.string.isRequired,
   onTicketSelection: PropTypes.func.isRequired,
   selectedTicket: PropTypes.string
 };
